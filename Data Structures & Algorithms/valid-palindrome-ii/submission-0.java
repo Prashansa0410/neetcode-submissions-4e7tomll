@@ -1,0 +1,26 @@
+class Solution {
+    public boolean validPalindrome(String s) {
+        int i=0,j=s.length()-1;
+
+        while(i<j){
+            if(s.charAt(i)!=s.charAt(j)){
+                return checkPallindrome(s,i,j-1)|| checkPallindrome(s,i+1,j);
+            }
+            i++;
+            j--;
+        }
+        return true;        
+}
+
+public boolean checkPallindrome(String s, int l, int r){
+    while(l<r){ 
+        if(s.charAt(l)!=s.charAt(r)){
+            return false;
+        }
+        l++;r--;
+        }
+       
+        return true;
+    
+}
+}
